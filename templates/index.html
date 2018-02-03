@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Back to basics, a small login page.</title>
+	 <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+</head>
+<body>
+	<div class="container">
+		<div class="container">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					<li role="presentation" class="active"><a href="#">Home</a></li>
+					<li role="presentation" class="active"><a href="signIn">SignIn</a></li>
+					<li role="presentation" class="active"><a href="signUp">SignUp</a></li>
+				</ul>
+			</nav>
+
+			<div class="jumbotron">
+				<h1>My App</h1>
+				<p><a class="btn btn-lg btn-success" href="signUp" role="button">Sign up today!</a></p>
+				{% for user in myUsers %}
+					<li>{{user.id}} - {{user.name}} - {{user.email}}</li>
+				{% endfor%}
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
