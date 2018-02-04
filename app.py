@@ -47,7 +47,7 @@ def register():
 		db.session.commit()
 		return redirect(url_for('index'))
 	else:
-		return ("This email is in use")
+		signUp()
 	
 	
 @app.route('/login', methods=['POST'])
@@ -57,15 +57,17 @@ def login():
 
 
 	if(validate(email,password)==True):
-		redirect(url_for('dashboard'))
-		return "login particulars correct"
+		return redirect(url_for('dashboard'))
+		#return "login particulars correct"
 	else:
-		return 'login fail'
+		return redirect(url_for('signIn'))
 
 
 @app.route('/dashboard')
 def dashboard():
-	myPosts = models.Post.query.filter_by('user')
+	myPosts = findPosts(session['id'])
+	
+	return render_template('dashboard.html', posts = myPosts, username = session['name'])
 
 
 if __name__ == '__main__':

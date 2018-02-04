@@ -12,9 +12,17 @@ def checkExisting(email):
 def validate(email,password):
 	print(email,password)
 	user = models.User.query.filter_by(email=email, password_hash=password).first()
+	print("user: {}".format(user))
 	if user==None:
 		return False
 	else:
-		session['user_id'] = user.id
-		print(session['user_id'])
+		session['id'] = user.id
+		session['name'] = user.name
+		print(session['id'])
 		return True
+
+def findPosts(id):
+	print(id)
+	myPosts = models.Post.query.filter_by(user_id = id).all()
+	print(myPosts)
+	return myPosts

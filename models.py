@@ -28,6 +28,6 @@ class Post(db.Model):
 	def __init__(self, message):
 		self.message = message
 
-	def __repr__(self):
-		return '<user_id {}>'.format(self.user_id)
+	def __repr__(self): #__repr__ has to return a string type
+		return '{}'.format(self.message)
 
