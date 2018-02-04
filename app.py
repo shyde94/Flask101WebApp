@@ -66,8 +66,20 @@ def login():
 @app.route('/dashboard')
 def dashboard():
 	myPosts = findPosts(session['id'])
-	
+
 	return render_template('dashboard.html', posts = myPosts, username = session['name'])
+
+@app.route('/post', methods=['POST'])
+def post():
+	message = request.form['post']
+	postMessage(session['id'],message)
+	return redirect(url_for('dashboard'))
+
+@app.route('/clearAll')
+def clearAll():
+	clearAllPosts(session['id'])
+	return redirect(url_for('dashboard'))
+
 
 
 if __name__ == '__main__':

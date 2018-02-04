@@ -25,7 +25,8 @@ class Post(db.Model):
 	message = db.Column(db.String(500),index=True)
 	user = relationship("User", foreign_keys= (user_id))
 
-	def __init__(self, message):
+	def __init__(self,user_id, message):
+		self.user_id = user_id 
 		self.message = message
 
 	def __repr__(self): #__repr__ has to return a string type

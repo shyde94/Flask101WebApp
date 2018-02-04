@@ -26,3 +26,12 @@ def findPosts(id):
 	myPosts = models.Post.query.filter_by(user_id = id).all()
 	print(myPosts)
 	return myPosts
+
+def postMessage(id,message):
+	newPost = models.Post(id, message)
+	db.session.add(newPost)
+	db.session.commit()
+
+def clearAllPosts(id):
+	models.Post.query.filter_by(user_id=id).delete()
+	db.session.commit()

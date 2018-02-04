@@ -20,18 +20,21 @@
 			<div class="jumbotron">
 				<h1>Dashboard</h1>
 				{{username}}
+				<ul class = "list-group">
 				{% for post in posts %}
-					<div class='container'>
-						<div class='post'>
-							{{post}}
-						</div>
+					<div>
+						<li class = "list-group-item">{{post}}</li>
 					</div>
+					
 				{% endfor %}
+				</ul>
+			</div>
 
 				<form class="form-origin" method="post" action="post">
 					<input type="word" name="post" id="post" class="form-control" placeholder="Type post here">
 					<button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit">Post</button>
 				</form>
+				<a id="clearAll" class="btn btn-lg btn-primary btn-block" href="clearAll">Clear all messages</a>
 
 			</div>
 		</div>
