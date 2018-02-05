@@ -92,10 +92,11 @@ def signOut():
 	return redirect(url_for('index'))
 
 # Ensure responses aren't cached
+'''
 @app.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    return response
+    return response'''
 
 
 if __name__ == '__main__':
