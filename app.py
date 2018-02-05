@@ -70,7 +70,7 @@ def login():
 @app.route('/dashboard')
 def dashboard():
 	print('session_id' , session['id'])
-	if(session['id']!= ''):
+	if('id' in session):
 		myPosts = findPosts(session['id'])
 		return render_template('dashboard.html', posts = myPosts, username = session['name'])
 	else:
@@ -90,7 +90,7 @@ def clearAll():
 
 @app.route('/signOut')
 def signOut():
-	session['id'] = ''
+	session.clear()
 	return redirect(url_for('index'))
 
 
