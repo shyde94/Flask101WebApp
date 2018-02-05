@@ -26,7 +26,9 @@ dependencies:
 - wheel=0.30.0=py27h677a027_1
 - zlib=1.2.11=hf3cbc9b_2
 - pip:
+  - flask-heroku==0.1.9
   - flask-sqlalchemy==2.3.2
+  - gunicorn==19.7.1
   - psycopg2==2.7.3.2
 prefix: /Users/Shide/anaconda3/envs/Flask101_simpleApp
 
