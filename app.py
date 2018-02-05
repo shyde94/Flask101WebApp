@@ -21,6 +21,7 @@ import models
 
 app.debug=True
 
+#response.headers['Cache-Control'] = 'no-cache'
 
 @app.route('/')
 def index():
@@ -74,13 +75,14 @@ def dashboard():
 		myPosts = findPosts(session['id'])
 		return render_template('dashboard.html', posts = myPosts, username = session['name'])
 	else:
-		return render_template('index.html')
+		return redirect(url_for('index'))
 
 @app.route('/post', methods=['POST'])
 def post():
 	message = request.form['post']
 	postMessage(session['id'],message)
 	return redirect(url_for('dashboard'))
+
 
 @app.route('/clearAll')
 def clearAll():
@@ -92,6 +94,12 @@ def signOut():
 	session['id'] = ''
 	return redirect(url_for('index'))
 
+
+# Ensure responses aren't cached
+@app.after_request
+def after_request(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    return response
 
 
 if __name__ == '__main__':
