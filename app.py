@@ -26,9 +26,8 @@ app.debug=True
 def index():
 	if(session['id']!=''):
 		return redirect(url_for('dashboard'))
-	myUsers = models.User.query.all()
 	else:
-		return render_template('index.html', myUsers = myUsers)
+		return render_template('index.html')
 
 @app.route('/signIn')
 def signIn():
