@@ -34,7 +34,7 @@ Get the heroku client at https://devcenter.heroku.com/articles/getting-started-w
 
 Commands into terminal:
 heroku create - heroku creates an app with a random name, important part here is a remote repository is set up for you to push source code up into this repo. Servers will use whatever code in this repo to run your app. 
-rest of the steps in the link above is pretty easy to follow
+Rest of the steps in the link above is pretty easy to follow.
 
 Conda environment was used here...
 
@@ -43,7 +43,7 @@ Important thing to note, some special files to include :
 
 - requirements.txt and environment.yml files, im not sure if you need both or one will just suffice. Kiv.
 
-runtime.txt, heroku runs on python 3.6 by default..so if your python dependency is set at 2.7, need to declare in this file. just write 'python-2.7.14’ in runtime.txt
+- runtime.txt, heroku runs on python 3.6 by default..so if your python dependency is set at 2.7, need to declare in this file. just write 'python-2.7.14’ in runtime.txt
 
 
 
@@ -54,4 +54,4 @@ Postgresql database needs to be set up on heroku as an add on as well. Follow tu
 and 
 
 - http://blog.sahildiwan.com/posts/flask-and-postgresql-app-deployed-on-heroku/ 
-some code for this link above is a bit outdated, but the general concept is still correct. Important part is to run python shell on the server to call db.create_all() so that the tables are created for whatever data needed to be stored.  
+some code for this link above is a bit outdated, but the general concept is still correct. The important part is to run python shell on the server to call db.create_all() so that the tables are created for whatever data needed to be stored.  
