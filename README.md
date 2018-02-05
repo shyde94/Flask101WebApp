@@ -59,3 +59,5 @@ some code for this link above is a bit outdated, but the general concept is stil
 
 
 Disclaimer: This readme's kind of for my own learning, I'm pretty sure I got some stuff incorrect. This app was just something for me to go through the process of creating a simple app and deploying it. 
+
+ - heroku app link : https://limitless-peak-12699.herokuapp.com/
