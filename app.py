@@ -20,7 +20,7 @@ from functions import *
 import models
 
 app.debug=True
-
+session['id'] = ''
 #response.headers['Cache-Control'] = 'no-cache'
 
 @app.route('/')
