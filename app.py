@@ -6,7 +6,7 @@ from flask.json import jsonify
 from flask_heroku import Heroku
 
 
-from functions import *
+
 
 import os
 
@@ -18,6 +18,7 @@ heroku = Heroku(app)
 db = SQLAlchemy(app)
 app.secret_key = 'not_so_secret_key'
 
+from functions import *
 import models
 
 app.debug=True
