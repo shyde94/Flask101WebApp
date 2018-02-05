@@ -16,18 +16,20 @@ Basic notes to myself.
 Flask app with postgresql deployed on heroku:
 
 Python libraries required, along with their required libraries:
-flask - Flask, request, redirect, url_for, session
-flask_sqlalchemy
-flask_heroku
+- flask - Flask, request, redirect, url_for, session
+- flask_sqlalchemy
+- flask_heroku
 
-specific files to have:
-an app.py file, thats where you define your routes. ROUTES -> what to do for each link. 
+Specific files to have:
+an app.py file, thats where you define your routes and call app.run(). ROUTES -> what to do for each link. 
 
 Postgresql: - this is the database server, within it you need to set up the database, and create the tables defined in your models.py
 
 For localhost:
 the SQLALCHEMY_DATABASE_URI key should be 
 'postgresql://user:password@localhost/database_name’ 
+
+otherwise for deployment on heroku, make sure to uncomment this.
 
 Deployment on heroku:
 Get the heroku client at https://devcenter.heroku.com/articles/getting-started-with-python#set-up
@@ -58,6 +60,6 @@ some code for this link above is a bit outdated, but the general concept is stil
 
 
 
-Disclaimer: This readme's kind of for my own learning, I'm pretty sure I got some stuff incorrect. This app was just something for me to go through the process of creating a simple app and deploying it. 
+DISCLAIMER: This readme's kind of for my own learning, I'm pretty sure I got some stuff incorrect. This app was just something for me to go through the process of creating a simple app and deploying it. 
 
  - heroku app link : https://limitless-peak-12699.herokuapp.com/
