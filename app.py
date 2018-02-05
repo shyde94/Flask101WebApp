@@ -69,9 +69,11 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-	myPosts = findPosts(session['id'])
-
-	return render_template('dashboard.html', posts = myPosts, username = session['name'])
+	if(session['id']!= ''):
+		myPosts = findPosts(session['id'])
+		return render_template('dashboard.html', posts = myPosts, username = session['name'])
+	else:
+		return render_template('index.html')
 
 @app.route('/post', methods=['POST'])
 def post():
