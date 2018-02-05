@@ -26,6 +26,8 @@ app.debug=True
 
 @app.route('/')
 def index():
+	if(session['id']!=''):
+		return redirect(url_for('dashboard'))
 	myUsers = models.User.query.all()
 	return render_template('index.html', myUsers = myUsers)
 
@@ -83,6 +85,11 @@ def post():
 def clearAll():
 	clearAllPosts(session['id'])
 	return redirect(url_for('dashboard'))
+
+@app.route('/signOut')
+def signOut():
+	session['id'] = ''
+	return redirect(url_for('index'))
 
 
 
