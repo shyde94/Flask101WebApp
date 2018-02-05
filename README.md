@@ -55,3 +55,7 @@ and
 
 - http://blog.sahildiwan.com/posts/flask-and-postgresql-app-deployed-on-heroku/ 
 some code for this link above is a bit outdated, but the general concept is still correct. The important part is to run python shell on the server to call db.create_all() so that the tables are created for whatever data needed to be stored.  
+
+
+
+Disclaimer: This readme's kind of for my own learning, I'm pretty sure I got some stuff incorrect. This app was just something for me to go through the process of creating a simple app and deploying it. 
