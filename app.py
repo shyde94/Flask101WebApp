@@ -12,7 +12,7 @@ import os
 
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://shydeee:1234qwer@localhost/flask101_app'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://shydeee:1234qwer@localhost/flask101_app'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 heroku = Heroku(app)
 db = SQLAlchemy(app)
