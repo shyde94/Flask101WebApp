@@ -31,7 +31,7 @@ def index():
 
 @app.route('/signIn')
 def signIn():
-	return render_template('signin.html')
+	return render_template('signIn.html')
 
 
 @app.route('/signUp')
