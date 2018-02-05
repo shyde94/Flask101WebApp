@@ -38,12 +38,14 @@ rest of the steps in the link above is pretty easy to follow
 
 Conda environment was used here...
 
-Important thing to note: Some special files to include - 
-Procfile: not sure what this does yet (KIV)
+Important thing to note, some special files to include : 
+- Procfile: not sure what this does yet (KIV)
 
-requirements.txt and environment.yml files, im not sure if you need both or one will just suffice. Kiv.
+- requirements.txt and environment.yml files, im not sure if you need both or one will just suffice. Kiv.
 
 runtime.txt, heroku runs on python 3.6 by default..so if your python dependency is set at 2.7, need to declare in this file. just write 'python-2.7.14’ in runtime.txt
+
+
 
 Postgresql database needs to be set up on heroku as an add on as well. Follow tutorial at these links:
 
