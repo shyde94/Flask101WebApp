@@ -23,10 +23,13 @@ app.debug=True
 
 @app.route('/')
 def index():
+	'''
 	if('id' not in session):
 		return render_template('index.html')
 	else:
 		return redirect(url_for('dashboard'))
+	'''
+	return render_template('index.html')
 		
 
 @app.route('/signIn')
