@@ -23,7 +23,7 @@ app.debug=True
 
 @app.route('/')
 def index():
-	if(session['id']!=''):
+	if('id' in session):
 		return redirect(url_for('dashboard'))
 	else:
 		return render_template('index.html')
