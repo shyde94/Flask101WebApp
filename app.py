@@ -3,7 +3,7 @@ from flask import render_template, request, url_for, redirect, session
 
 from flask_sqlalchemy import SQLAlchemy 
 from flask.json import jsonify
-from flask.ext.heroku import Heroku
+from flask_heroku import Heroku
 
 
 from functions import *
@@ -14,6 +14,7 @@ import os
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://shydeee:1234qwer@localhost/flask101_app'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 app.secret_key = 'not_so_secret_key'
 
