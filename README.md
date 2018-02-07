@@ -56,7 +56,9 @@ Postgresql database needs to be set up on heroku as an add on as well. Follow tu
 and 
 
 - http://blog.sahildiwan.com/posts/flask-and-postgresql-app-deployed-on-heroku/ 
-some code for this link above is a bit outdated, but the general concept is still correct. The important part is to run python shell on the server to call db.create_all() so that the tables are created for whatever data needed to be stored.  
+some code for this link above is a bit outdated, but the general concept is still correct. The important part is to run python shell on the server to call db.create_all() so that the tables are created for whatever data needed to be stored. 
+
+command to run python on heroku: heroku run python 
 
 
 
